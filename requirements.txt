@@ -1,0 +1,11 @@
+certifi
+Django
+pbr
+gunicorn
+pipenv
+pytz
+six
+stevedore
+whitenoise
+django-tastypie
+social-auth-app-django
