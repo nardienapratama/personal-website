@@ -10,11 +10,11 @@ import json
 # Create your views here.
 
 def index(request):
-    return render(request, 'ppw_app/homepage.html')
+    return render(request, 'homepage.html')
 
 
 def about(request):
-    return render(request, 'ppw_app/aboutme.html')
+    return render(request, 'aboutme.html')
 
 def books(request):
     # num_fav = request.POST['counter']
@@ -25,14 +25,14 @@ def books(request):
         user_session = request.session.get('user_session', 'private')
         request.session['user_session'] = 'private'
 
-        return render(request, 'ppw_app/books.html')
+        return render(request, 'books.html')
 
     else:
         del request.session['user_session']      
-        return render(request, 'ppw_app/books.html')
+        return render(request, 'books.html')
 
 def signup(request):
-    return render(request, 'ppw_app/signup.html')
+    return render(request, 'signup.html')
 
 
 
@@ -50,7 +50,7 @@ def schedule(request):
                 return HttpResponseRedirect('/schedule')
     else:
         form = Activity_Form()
-        return render(request, 'ppw_app/schedule.html', {'form':form, "schedules":Schedule.objects.all()})
+        return render(request, 'schedule.html', {'form':form, "schedules":Schedule.objects.all()})
 
 
 def delete_events(request):
@@ -62,7 +62,7 @@ def display_regis_form(request):
     response = {}
     form = Registration_Form(request.POST or None)
     response['form'] = form
-    return render(request, 'ppw_app/registration.html', response)
+    return render(request, 'registration.html', response)
 
 def run_form(request):
     if request.method == 'POST':
@@ -84,7 +84,7 @@ def run_form(request):
         else:
                 registrationinput = {}
                 return JsonResponse(registrationinput)
-                       
+
 @csrf_exempt
 def email_validation(request):
     currentemail = request.POST.get('email', None)
