@@ -17,6 +17,7 @@ stevedore = "*"
 whitenoise = "*"
 django-tastypie = "*"
 social-auth-app-django = "*"
+pip ="*"
 
 
 [requires]
