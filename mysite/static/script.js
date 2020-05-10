@@ -32,7 +32,7 @@ $(document).ready(function(){
     const IMAGE_URLS = {
         mountainAndRiver: 'https://images.pexels.com/photos/206660/pexels-photo-206660.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
         work: 'https://images.pexels.com/photos/796602/pexels-photo-796602.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        aboutMe: 'https://images.pexels.com/photos/399160/pexels-photo-399160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        aboutMe: 'https://images.pexels.com/photos/2088170/pexels-photo-2088170.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     };
     //Set background image for home section 
     var homeSection = document.getElementById("homeSection");
@@ -59,7 +59,6 @@ $(document).ready(function(){
     window.addEventListener('scroll', function(e) {
         let offset = window.pageYOffset;
         homeSection.style.backgroundPositionY = -offset*0.5 + "px";
-        aboutMeSection.style.backgroundPositionY = -offset*0.17 + "px";
 
     }) 
         
