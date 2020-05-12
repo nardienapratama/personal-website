@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+<h2>Registration</h2>
+
+<div class="container">
+    <div class="card bg-white mb-3" style="max-width: 100%;">
+        <div class="card-header"><h5 style="color: black; align-self: center;">Fill in this form below!</h5></div>
+        <div class="card-body">
+            <form id="regisform" action="{% url 'displayRegisForm' %}" method="POST">
+                {% csrf_token %}
+                {% for each in form %}
+                <!-- <p style="font-size: 14pt;">{{each.label_tag }} <br> {{each}}</p> -->
+                
+                    <p style="font-size: 14pt; color: black;">{{each.label_tag }} <br> {{each}}</p>
+                    
+                
+                {% endfor %}
+                <button style="margin-bottom: 10px;" id="submitbutton" type="submit" class="btn btn-secondary" >Register</button>
+            
+            </form>  
+        </div>  
+    </div>
+
+</div>
+
+{% endblock %}

@@ -26,6 +26,16 @@
 
 }
 
+.appsSection{
+    padding-top: 5%;
+    background-size: cover;
+}
+
+
+
+.wishlist>h5,p{
+    display: inline;
+}
 .fixed-navbar{
     position: fixed;
     top: 0;
@@ -119,8 +129,13 @@
 
 .table{
     text-align: center;
-    max-width: 90%;
+    padding: 5%;
+    padding-top: 0%;
     
+}
+
+.wishlist>h5,p{
+    display: inline;
 }
 
 #fav-button{
@@ -150,7 +165,7 @@
 }
 .card {
     margin-bottom: 0;
-    background-color: rgb(255, 242, 243);
+    background-color:#987A7B;
     border-radius: 20px;
     vertical-align: bottom;
 }

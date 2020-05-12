@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+    <div class="container">
+        <div class="row">
+            <div class="card horizontal z-depth-3">
+                <div class="col s4 l3 imagecolumn">
+                    <img class="profile-pic" src="{% static 'img/Jakun pic intl womens day.jpeg' %}" style="width: 100%; height: auto">
+                </div>
+                <div class="col s8 l9">
+                    <div class="card-title-text">
+                        <h2>Nardiéna Althafia Pratama</h2>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <p>Full-time Computer Science Student at Universitas Indonesia
+                                <br /> About:
+                                <br /> Likes to play piano, listens to classical music, and reads novels/almanacs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="row">
+            <h3>More Info About Me :}</h3>
+            <div class="card">
+                <div class="card-content">
+                    <div class="row">
+                        <h5>Work Experience</h5>
+                        <p>- Worked at Starbucks (2014)</p>
+                    </div>
+
+                    <div class="row">
+                        <h5>Volunteering Experience</h5>
+                        <p>- Helped out as a volunteer in the Asian Games 2018
+                            <br> - Became a teaching assistant for a high school Science and Math Class (2016)
+                            <br> - Volunteered teaching about how to use computers to elderly people (2015)</p>
+                    </div>
+
+                    <div class="row">
+                        <h5>Skills</h5>
+                        <p>- Play the piano and cello
+                            <br> - Program in Python and Java
+                            <br> - Public Speaking
+                            <br> - Artificial Intelligence
+                            <br>
+                        </p>
+                    </div>
+
+
+                    <div class="row">
+                        <h5>Achievements</h5>
+                        <p>- Headteacher’s award: Received an annual student award from the high school headteacher
+                            <br> - Governor’s award: Received a student award from the Governor of Barnet, London
+                            <br> - Grade acceleration in high school
+                            <br> - Received a first grade on the Brilliant Club final assignment, an essay titled “Can Terrorism
+                            Ever Be Justified?”</p>
+
+
+                    </div>
+
+                    <div class="row">
+                        <h5>Organizations</h5>
+                        <p>- Staff of BEM Fasilkom UI Kajian dan Aksi Strategis
+                            <Br> - Staff of the Bibliography Division in Orkestra Simfoni Mahawaditra UI (OSUI)</p>
+
+                    </div>
+
+                    <div class="row">
+                        <h5>Committees</h5>
+                        <p>- Ticketing Staff of the Interweek 2018 Committee
+                            <br> - Documentary Staff of the OSUI Concert, Peristeri</p>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+
+            </div>
+        </div> -->
+        <button class="accordion">Work and Volunteering Experience </button>
+        <div class="panel">
+            <h6>Work Experience</h6>
+            <p>- Worked at Starbucks (2014)</p>
+            <h6>Volunteering Experience</h6>
+            <p>- Helped out as a volunteer in the Asian Games 2018
+            <br> - Became a teaching assistant for a high school Science and Math Class (2016)
+            <br> - Volunteered teaching about how to use computers to elderly people (2015)</p>
+        </div>
+        <button class="accordion">Organizations and Committees</button>
+        <div class="panel">
+            <h6>Organizations</h6>
+            <p>- Staff of BEM Fasilkom UI Kajian dan Aksi Strategis
+            <br> - Staff of the Bibliography Division in Orkestra Simfoni Mahawaditra UI (OSUI)</p>
+            <h6>Committees</h6>
+            <p>- Ticketing Staff of the Interweek 2018 Committee
+            <br> - Documentary Staff of the OSUI Concert, Peristeri</p>
+
+
+        </div>
+        <button class="accordion">Skills and Achievements</button>
+        <div class="panel">
+            <h6>Skills</h6>
+            <p>- Play the piano and cello
+            <br> - Program in Python and Java
+            <br> - Public Speaking
+            <br> - Artificial Intelligence
+            <br>
+            </p>
+            <h6>Achievements</h6>
+            <p>- Headteacher’s award: Received an annual student award from the high school headteacher
+            <br> - Governor’s award: Received a student award from the Governor of Barnet, London
+            <br> - Grade acceleration in high school
+            <br> - Received a first grade on the Brilliant Club final assignment, an essay titled “Can Terrorism
+            Ever Be Justified?”</p>
+
+
+        </div>
+
+        
+    </div>
+
+    
+{% endblock %}

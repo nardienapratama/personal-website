@@ -1,0 +1,86 @@
+{% extends "base.html" %} 
+{% block content %} 
+{% load static %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="card cyan lighten-4 signup">
+                <div class="card-content black-text">
+                    <span class="card-title">Sign up now!</span>
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label id="sub" for="name">Full Name</label>
+                                    <br>
+                                    <br>
+                                    <input placeholder="Name" id="name" type="text" class="validate">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label id="sub" for="birthdate">Birth Date</label>
+                                    <br>
+                                    <br>
+                                    <input placeholder="dd/mm/yyyy" id="birthdate" type="date" class="validate">
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label id="sub" for="password">Password (min. 8 characters)</label>
+                                    <br>
+                                    <br>
+                                    <input placeholder="Password" id="password" type="password" class="validate">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label id="sub" for="passwordconf">Confirm Password</label>
+                                    <br>
+                                    <br>
+                                    <input placeholder="Re-type Password" id="password" type="password" class="validate">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label id="sub" for="username">Username</label>
+                                    <br>
+                                    <br>
+                                    <input id="username" type="text" class="validate">
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label id="sub" for="email">Email</label>
+                                    <br>
+                                    <br>
+                                    <input placeholder="*****@gmail.com" id="email" type="email" class="validate">
+                                </div>
+                            </div>
+
+                        </form>
+                        <button class="btn waves-effect waves-light temp" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

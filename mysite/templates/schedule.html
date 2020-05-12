@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<h2>Events</h2>
+<div class="form-container">
+    <form action="{% url 'schedule' %}" method="POST">
+        {% csrf_token %}
+        {{form}}
+
+        <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+        </button>
+
+        <a class="btn waves-effect waves-light red delete" href="{% url 'deleteEvents' %}" name="action">Delete
+        </a>
+    </form>
+</div>
+
+<!-- 'schedules' used below is from key written in views.py line33 -->
+{% if schedules %} 
+{% for activities in schedules %}
+<div class="card-panel teal lighten-5">
+    <div class="row">
+        <div class="col s3 m3 l3"><p>Event Name:<br>{{activities.eventName}}</p></div>
+        <div class="col s1 m1 l3"><p>Date of Event:<br>{{activities.date}}</p></div>
+        <div class="col s1 m1 l3"><p>Category of Event:<br>{{activities.category}}</p></div>
+        <div class="col s3 m3 l3"><p>Location of Event:<br>{{activities.location}}</p></div>
+
+     </div>
+</div>
+{% endfor %}
+{% else %}
+<p>There are no events scheduled.</p>
+
+
+
+{% endif %}
+{% endblock %}

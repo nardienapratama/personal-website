@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div class="container" style="padding:5%">
+
+  {% if user.is_authenticated %}
+    <div class="alert alert-success" role="alert">
+      <h5 class="display-5">HELLO {{user.username }}! You have just logged in!</h5>
+      <p>
+        Do you wanna log out? 
+        <a href="{% url 'logout' %}">Logout</a>
+    
+      </p>
+    </div>
+    
+  {% else %}
+    <div class="alert alert-secondary" role="alert">
+      <h5 class="display-5">Don't have an account yet?</h5>
+      <button href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-large waves-effect waves-light grey darken-4">Login using Google</button>
+    </div>
+    
+    
+  {% endif %} 
+
+  <div class="wishlist" style="float: right;">
+    <h5 class="display-5">Number of books in wishlist: </h5>
+    <h5 class="display-5" id="counter" name="counter" style="font-size: 20pt; font-family: 'Nunito';">0</h5>
+  </div>
+  <div class="input-group" id="search-bar" style="float: left;">
+    <form id="searchbox-form"><input id="searchbox" type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button id="searchbutton" class="btn btn-search" type="submit"><i class="fa fa-search fa-fw"></i> Search</button>
+      </span>
+    </form>
+  </div>
+  
+
+  
+</div>
+
+
+
+<div class="table">
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Book Cover</th>
+              
+              <th scope="col">Book Title</th>
+              <th scope="col">Author/s</th>
+              <th scope="col">Publisher</th>
+              <th scope="col">Fav</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

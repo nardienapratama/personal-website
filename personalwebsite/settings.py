@@ -70,8 +70,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'personalwebsite.urls'
 
-# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='1002718970905-lnbk48uiqqtvaj2rmm90gn65qlfi1gka.apps.googleusercontent.com'  #Paste CLient Key
-# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'CzqtnUZhG_wo3BNDClTuNNCK' #Paste Secret Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='1002718970905-lnbk48uiqqtvaj2rmm90gn65qlfi1gka.apps.googleusercontent.com'  #Paste CLient Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'CzqtnUZhG_wo3BNDClTuNNCK' #Paste Secret Key
 
 TEMPLATES = [
     {

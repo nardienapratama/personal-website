@@ -33,6 +33,7 @@ $(document).ready(function(){
         mountainAndRiver: 'https://images.pexels.com/photos/206660/pexels-photo-206660.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
         work: 'https://images.pexels.com/photos/796602/pexels-photo-796602.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
         aboutMe: 'https://images.pexels.com/photos/2088170/pexels-photo-2088170.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        apps: 'https://images.pexels.com/photos/3041347/pexels-photo-3041347.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     };
     //Set background image for home section 
     var homeSection = document.getElementById("homeSection");
@@ -44,10 +45,17 @@ $(document).ready(function(){
     const setAboutMeBackground = (image) => {
         aboutMeSection.style.backgroundImage = "url('"+IMAGE_URLS[image]+"')";
     }
+
+    var appsSection = document.getElementById("appsSection");
+    const setAppsSectionBackground = (image) => {
+        appsSection.style.backgroundImage = "url('"+IMAGE_URLS[image]+"')";
+    }
+
     // Check time of the day
     var now = new Date();
     if (window.location.pathname == '/') {
         setAboutMeBackground('aboutMe');
+        setAppsSectionBackground('apps');
         if ((now.getHours() >= 9) && (now.getHours() <= 17 && now.getMinutes() <=30) ) {
             setHomeBackground('mountainAndRiver');
         } else {
@@ -144,7 +152,7 @@ $(document).ready(function(){
                 $("tbody").append(
                     '<tr>\
                         <th scope="row">'+ (x+1) +'</th>\
-                        <td><img src="' +result.items[x].volumeInfo.imageLinks.thumbnail + '"></td>\
+                        <td><img data-toggle="tooltip" data-placement="bottom" title="' + result.items[x].volumeInfo.description +'" src="' +result.items[x].volumeInfo.imageLinks.thumbnail + '"></td>\
                         <td>'+ result.items[x].volumeInfo.title + '</td>\
                         <td>' + result.items[x].volumeInfo.authors + '</td>\
                         <td>'+ result.items[x].volumeInfo.publisher +'</td>\
@@ -152,12 +160,16 @@ $(document).ready(function(){
                         </i></span></td>\
                     </tr>'  
                 );  
-                
+                document.get
             }
         }
         
 
     })
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
 
     function csrftokenSafeMethod(method){ return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method)); }
 
