@@ -2,10 +2,11 @@ from django.shortcuts import render
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from .models import Schedule, Registration
-from .forms import Activity_Form, Registration_Form
+from .forms import Activity_Form, Registration_Form, CreateUserForm
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 import json
 
 # Create your views here.
@@ -70,7 +71,7 @@ def run_form(request):
         form = Registration_Form(request.POST)
         if form.is_valid():
                 cleaned_data = form.cleaned_data
-                registrationinput = Registration.create(firstname=cleaned_data['firstname'], lastname=cleaned_data['lastname'], username=cleaned_data['username'], email=cleaned_data['email'], password=cleaned_data['password'])
+                registrationinput = Registration.create(firstname=cleaned_data['firstname'], lastname=cleaned_data['lastname'], email=cleaned_data['email'], password=cleaned_data['password'])
                 registrationinput.save()
                 # #Create user and save to database
                 # user = User.objects.create_user(cleaned_data['username'], cleaned_data['email'])
@@ -95,8 +96,15 @@ def email_validation(request):
     return JsonResponse(validation)
 
 def registerPage(request):
-    response = {}
-    return render(request, 'register.html'. response)
+    form = CreateUserForm()
+
+    if request.method == 'POST':
+        form = CreateUserForm(request.POST)
+        if form.is_valid:
+            form.save()
+    response = {'form': form}
+    return render(request, 'register.html', response)
 
 def loginPage(request):
-    
+    response = {}
+    return render(request, 'login.html', response)

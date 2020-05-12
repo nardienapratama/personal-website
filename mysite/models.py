@@ -19,11 +19,10 @@ class Schedule(models.Model):
 class Registration(models.Model):
     firstname = models.CharField(max_length = 50)
     lastname = models.CharField(max_length = 50)
-    username = models.CharField(max_length=50)
     email = models.CharField(max_length = 50, unique=True)
     password = models.CharField(max_length = 50)
 
     @classmethod
-    def create(cls, firstname, lastname, username, email, password):
-        registration = cls(firstname=firstname, lastname=lastname, username=username, email=email, password=password)
+    def create(cls, firstname, lastname, email, password):
+        registration = cls(firstname=firstname, lastname=lastname, email=email, password=password)
         return registration
