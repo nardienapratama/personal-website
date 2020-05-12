@@ -5,6 +5,7 @@ from .models import Schedule, Registration
 from .forms import Activity_Form, Registration_Form
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 import json
 
 # Create your views here.
@@ -65,19 +66,19 @@ def display_regis_form(request):
     return render(request, 'registration.html', response)
 
 def run_form(request):
-    if request.method == 'POST':
-            #         first_name = request.POST.get('firstname', None)
-            #         last_name = request.POST.get('lastname', None)
-            #         email = request.POST.get('email', None)
-            #         password = request.POST.get('password', None)
-            #         Registration.objects.create(firstname=first_name, lastname=last_name, email=email, password=password)
-            #         return HttpResponse(json.dumps({'output': 'Thank you' + first_name + ' for subscribing!'}))
-    
+    if request.method == 'POST':    
         form = Registration_Form(request.POST)
         if form.is_valid():
                 cleaned_data = form.cleaned_data
-                registrationinput = Registration.create(firstname=cleaned_data['firstname'], lastname=cleaned_data['lastname'], email=cleaned_data['email'], password=cleaned_data['password'])
+                registrationinput = Registration.create(firstname=cleaned_data['firstname'], lastname=cleaned_data['lastname'], username=cleaned_data['username'], email=cleaned_data['email'], password=cleaned_data['password'])
                 registrationinput.save()
+                # #Create user and save to database
+                # user = User.objects.create_user(cleaned_data['username'], cleaned_data['email'])
+
+                # #Update fields and then save again
+                # user.first_name = cleaned_data['firstname']
+                # user.last_name = cleaned_data['lastname']
+                # user.save()
                 return JsonResponse(registrationinput)
 
                         
@@ -93,4 +94,9 @@ def email_validation(request):
     }
     return JsonResponse(validation)
 
+def registerPage(request):
+    response = {}
+    return render(request, 'register.html'. response)
 
+def loginPage(request):
+    

@@ -61,14 +61,16 @@ $(document).ready(function(){
         } else {
             setHomeBackground('work');
         }
+        window.addEventListener('scroll', function(e) {
+            let offset = window.pageYOffset;
+            homeSection.style.backgroundPositionY = -offset*0.5 + "px";
+
+        }) 
+
     }
     
         
-    window.addEventListener('scroll', function(e) {
-        let offset = window.pageYOffset;
-        homeSection.style.backgroundPositionY = -offset*0.5 + "px";
-
-    }) 
+    
         
     $(".btn").mouseup(function(){
         $(this).blur();
@@ -199,7 +201,7 @@ $(document).ready(function(){
         console.log("HIII KEY UP WORKS")
         $.ajax({
             method: "POST",
-            url:'/ppw_app/emailValidation/',
+            url:'/emailValidation/',
             data: {
                 'email' : email
             },
@@ -237,7 +239,7 @@ $(document).ready(function(){
         csrftoken = $('input[name="csrfmiddlewaretoken"]').val();	// get csrf token value
         $.ajax({		// check email again before submitting form
             method: "POST",
-            url:'/ppw_app/emailValidation/',
+            url:'/emailValidation/',
             data: {
                 'email' : email
             },
@@ -262,7 +264,7 @@ $(document).ready(function(){
                         valid = true;
                     	$.ajax({		// email OK, submit form
 							method: "POST",
-							url: '/ppw_app/runForm/',
+							url: '/runForm/',
 							data:{
 								'firstname' : firstname,
 								'lastname' : lastname,
