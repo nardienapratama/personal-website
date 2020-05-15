@@ -41,11 +41,11 @@
 
 .about-me-section{
     background: white;
-    padding-top: 8%;
+    padding-top: 5%;
 }
 
 .profile-pic-div{
-    padding-top: 5%;
+    padding-top: 6%;
 }
 #profile-pic{
     height: 15%;
@@ -68,12 +68,46 @@
     padding-left: 30%;
     padding-top: 1.5%;
 }
-.appsSection{
+.what-i-can-do-section{
     background: white;
-    padding-top: 8%;
+    padding-top: 6%;
+    overflow: hidden;
 }
 
+.section-title{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 36pt;
+    color: #3775AF;
+    padding-bottom: 5%;
+}
 
+.skill{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16pt;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    float: left;
+    width: 50%;
+}
+
+.logos{
+    padding-top: 2.5%;
+    padding-bottom:2.5%;
+    float: left;
+    width: 50%;
+}
+
+.html-js-css{
+    height: 30%;
+    width: 30%;
+    padding-right: 4%;
+}
+
+.react{
+    height: 25%;
+    width: 25%;
+    padding-left: 4%;
+}
 
 .app-button{
     background-color: #FF3B3F;
