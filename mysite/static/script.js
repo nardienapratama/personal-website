@@ -30,24 +30,25 @@ $(document).ready(function(){
 
     //Object containing image URLs
     const IMAGE_URLS = {
-        home: 'C:/Users/Nardiena A. Pratama/Documents/Personal Projects/new-personal-website/personalwebsite/mysite/static/img/home-bg.jpg',
+        home: 'https://cdn.pixabay.com/photo/2017/12/10/20/56/feather-3010848_960_720.jpg',
         mountainAndRiver: 'https://images.pexels.com/photos/206660/pexels-photo-206660.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
         work: 'https://images.pexels.com/photos/796602/pexels-photo-796602.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
         aboutMe: 'https://images.pexels.com/photos/2088170/pexels-photo-2088170.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
         apps: 'https://images.pexels.com/photos/3041347/pexels-photo-3041347.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     };
     //Set background image for home section 
-    var homeSection = document.getElementById("homeSection");
+    var homeSection = document.getElementById("home-section");
     const setHomeBackground = (image) => {
         // document.window.style.backgroundImage = "url('"+IMAGE_URLS[image]+"')";
         homeSection.style.backgroundImage = "url('"+IMAGE_URLS[image]+"')";
+        
     };
-    var aboutMeSection = document.getElementById("aboutMeSection");
+    var aboutMeSection = document.getElementById("who-i-am-section");
     const setAboutMeBackground = (image) => {
         aboutMeSection.style.backgroundImage = "url('"+IMAGE_URLS[image]+"')";
     }
 
-    var appsSection = document.getElementById("appsSection");
+    var appsSection = document.getElementById("what-i-can-do-section");
     const setAppsSectionBackground = (image) => {
         appsSection.style.backgroundImage = "url('"+IMAGE_URLS[image]+"')";
     }
