@@ -15,8 +15,10 @@
     
   {% else %}
     <div class="alert alert-secondary" role="alert">
-      <h5 class="display-5">Don't have an account yet?</h5>
-      <button href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-large waves-effect waves-light grey darken-4">Login using Google</button>
+      <h5 class="display-5">Are you not signed in?</h5>
+      <a href="{% url 'login' %}?next=/books"><button action="{% url 'login' %}?next=/books" class="btn btn-large waves-effect waves-light grey darken-4">Login</button></a>
+      <!-- <a href="{% url 'login' %}?next={{request.path}}">Login</a> -->
+      <input type="hidden" name="next" value="/books">
     </div>
     
     

@@ -52,24 +52,33 @@ $(document).ready(function(){
     }
 
     // Check time of the day
-    var now = new Date();
-    if (window.location.pathname == '/') {
-        setAboutMeBackground('aboutMe');
-        setAppsSectionBackground('apps');
-        if ((now.getHours() >= 9) && (now.getHours() <= 17 && now.getMinutes() <=30) ) {
-            setHomeBackground('mountainAndRiver');
-        } else {
-            setHomeBackground('work');
-        }
-        window.addEventListener('scroll', function(e) {
-            let offset = window.pageYOffset;
-            homeSection.style.backgroundPositionY = -offset*0.5 + "px";
+    // var now = new Date();
+    // if (window.location.pathname == '/home/') {
+    //     // setAboutMeBackground('aboutMe');
+    //     // setAppsSectionBackground('apps');
+    //     if ((now.getHours() >= 9) && (now.getHours() <= 17 && now.getMinutes() <=30) ) {
+    //         setHomeBackground('mountainAndRiver');
+    //     } else {
+    //         setHomeBackground('mountainAndRiver');
+    //     }
+    //     window.addEventListener('scroll', function(e) {
+    //         let offset = window.pageYOffset;
+    //         homeSection.style.backgroundPositionY = -offset*0.5 + "px";
 
-        }) 
+    //     }) 
 
+    // }
+
+    if(window.location.pathname == '/login/?next=/books/'){
+        submitBtn = document.getElementById('loginSubmitButton')
+
+        submitBtn.addEventListener("click", function (evt) {
+            evt.preventDefault();  
+            window.location.replace("/books");
+        return false;
+        });
     }
     
-        
     
         
     $(".btn").mouseup(function(){
@@ -162,7 +171,6 @@ $(document).ready(function(){
                         </i></span></td>\
                     </tr>'  
                 );  
-                document.get
             }
         }
         

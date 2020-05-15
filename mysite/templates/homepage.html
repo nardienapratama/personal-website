@@ -1,11 +1,11 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 
 <section class="sectionTemplate homeSection" id="homeSection">
-  <h1 class="display-1">Hi there! I'm Nardiéna.</h1>
-  <h4 class="display-4 text-muted">This is my personal website created using Django and Javascript. Feel free to browse around!</h4>
-  <div class="aboutMeButton">
+  <div class="home-name-div"><p class="display-1">I'm Nardiéna.</p></div>
+  <div class="home-job-title-div"><p class="display-4 text-muted">A web developer.</p></div>
+  <!-- <div class="aboutMeButton">
     <a href="#aboutMeSection" class="btn btn-large waves-effect waves-light grey darken-4">More About Me</a>
-  </div>
+  </div> -->
 </section>
 
 <section class="sectionTemplate aboutMeSection" id="aboutMeSection">
@@ -19,7 +19,45 @@
 </section>
 
 <section class="sectionTemplate appsSection" id="appsSection">
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dicta saepe, porro maiores ratione, officiis inventore enim repellat placeat dolor totam voluptate libero nobis? Minus consequuntur pariatur quibusdam temporibus magnam!</p>
+  <div class="row" >
+    <div class="col-sm-6" style="padding-top: 10%;">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="display-4">Book-Search App</h4>
+          <p class="card-text">This is a book-searching app that was created using Google's API. Signing in to the website allows you to see how many books were on your wishlist. </p>
+          <div><a href="{% url 'books' %}" class="btn btn-primary app-button">Check it out!</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6" style="padding-top: 10%;">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="display-4">Special title treatment</h4>
+          <p class="card-text">This is a book-searching app that was created using Google's API. Signing in to the website allows you to see how many books were on your wishlist.</p>
+          <div><a href="#" class="btn btn-primary app-button ">Go somewhere</a></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="display-4">Special title treatment</h4>
+          <p class="card-text">This is a book-searching app that was created using Google's API. Signing in to the website allows you to see how many books were on your wishlist.</p>
+          <div><a href="#" class="btn btn-primary app-button">Go somewhere</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="display-4">Special title treatment</h4>
+          <p class="card-text">This is a book-searching app that was created using Google's API. Signing in to the website allows you to see how many books were on your wishlist.</p>
+          <div><a href="#" class="btn btn-primary app-button">Go somewhere</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 

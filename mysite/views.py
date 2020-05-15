@@ -1,17 +1,24 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from .models import Schedule, Registration
-from .forms import Activity_Form, Registration_Form, CreateUserForm
+
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+
+from .models import Schedule, Registration
+from .forms import Activity_Form, Registration_Form, CreateUserForm
 import json
 
 # Create your views here.
 
 def index(request):
+    return redirect('login')
+
+def home(request):
     return render(request, 'homepage.html')
 
 
@@ -73,13 +80,7 @@ def run_form(request):
                 cleaned_data = form.cleaned_data
                 registrationinput = Registration.create(firstname=cleaned_data['firstname'], lastname=cleaned_data['lastname'], email=cleaned_data['email'], password=cleaned_data['password'])
                 registrationinput.save()
-                # #Create user and save to database
-                # user = User.objects.create_user(cleaned_data['username'], cleaned_data['email'])
 
-                # #Update fields and then save again
-                # user.first_name = cleaned_data['firstname']
-                # user.last_name = cleaned_data['lastname']
-                # user.save()
                 return JsonResponse(registrationinput)
 
                         
@@ -100,11 +101,38 @@ def registerPage(request):
 
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
-        if form.is_valid:
+        if form.is_valid():
             form.save()
+            user = form.cleaned_data.get('username')
+            messages.success(request, 'Account was created for ' + user)
+            return redirect('login')
     response = {'form': form}
     return render(request, 'register.html', response)
 
 def loginPage(request):
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        # check if user is authenticated
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            if 'next' in request.POST:
+                return HttpResponseRedirect(request.POST.get['next'])
+            else:
+                return redirect('home')
+            
+            # return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+
+        else:
+            messages.info(request, 'Username OR password is incorrect')
+    
     response = {}
     return render(request, 'login.html', response)
+
+def logoutUser(request):
+    logout(request)
+    return redirect('login')

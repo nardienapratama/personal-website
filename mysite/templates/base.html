@@ -14,7 +14,7 @@
     <!-- Compiled and minified CSS -->
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -37,12 +37,12 @@
     <div>
 
         <nav class="fixed-navbar">
-            <div class="nav-wrapper navicon mid nav-wrapper2">
-                <a href="{% url 'index' %}" class="brand-logo right navicon">~NAP~</a>
+            <div class="nav-wrapper navicon mid navbar-custom">
+                <a href="{% url 'home' %}" class="brand-logo right navicon">~NAP~</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="left hide-on-med-and-down navicon">
                     <li class="navicon">
-                        <a href="{% url 'index' %}">Homepage</a> 
+                        <a href="{% url 'home' %}">Homepage</a> 
                     </li>
                     <li class="navicon">
                         <a href="{% url 'about' %}">More About Me</a>
@@ -68,21 +68,24 @@
                     <li>
                         <label>
                             <input id="radiobutton1" name="group1" type="radio" />
-                            <span style="color:darkslategrey">Original Theme</span>
+                            <span style="color:#7FAEDA;">Original Theme</span>
                         </label>
                     </li>
                     <li>
                         <label>
                             <input id="radiobutton2" name="group1" type="radio" />
-                            <span style="color:darkslategrey"> Alternative Theme</span>
+                            <span style="color:#7FAEDA;"> Alternative Theme</span>
                         </label>
                     </li>
-                    
+                    {% if user.is_authenticated %}
+                        <li class="navicon">Hello, {{request.user}}</li>
+                        <li class="navicon"><a href="{% url 'logout' %}">Logout</a></li>
+                    {% endif %}
                 </ul>
                 
                 <ul class="sidenav" id="mobile-demo">
                     <li>
-                        <a href="{% url 'index' %}">Homepage</a> <!-- 'namespace in urls.py project: namespace urls.py app' -->
+                        <a href="{% url 'home' %}">Homepage</a> <!-- 'namespace in urls.py project: namespace urls.py app' -->
                     </li>
                     <li>
                         <a href="{% url 'about' %}">More About Me</a>
