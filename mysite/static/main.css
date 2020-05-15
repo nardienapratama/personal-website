@@ -9,17 +9,17 @@
 .sectionTemplate{
     height: 100vh;
     box-sizing: border-box;
-    /* padding: 35px; */
+    padding: 5%;
+    text-align: center;
 }
 
 .homeSection{
-    background-attachment: fixed ;
+    /* background-attachment: fixed ;
     background-size: cover;
-    padding: 5%;
+     */
     position: relative;
-    text-align: center;
+    
     background-color: #FAFCFF;
-    /* vertical-align: auto; */
 }
 
 .home-name-div{
@@ -39,19 +39,37 @@
     color: #3775AF;
 }
 
-
 .aboutMeSection{
     background: white;
     color: darkslategrey;
-    padding-top: 5%;
+    padding-top: 8%;
     background-size: cover;
-
 }
 
+.profile-pic-div{
+    padding-top: 2%;
+}
+.hello-about-section-div{
+    padding-top: 1.5%;
+}
+
+.hello-about-section-div>p{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 36pt;
+    color: #7FAEDA;
+}
+
+.description-about-section-div{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16pt;
+    padding-right: 30%;
+    padding-left: 30%;
+    padding-top: 1.5%;
+}
 .appsSection{
     background: #efefef;
     color: darkslategrey;
-    padding-top: 5%;
+    padding-top: 8%;
     background-size: cover;
 }
 
