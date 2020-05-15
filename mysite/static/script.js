@@ -8,8 +8,8 @@ $(document).ready(function(){
 
     $("#radiobutton1").click( function () {
         $("body").css({"background-color": "white"});
-        $("nav").css({"background-color": "#ee6e73"});
-        $(".navicon>a").css({"color": "darkslategrey"});
+        $("nav").css({"background-color": "rgb(144,189,229, 0.17)"});
+        $(".navicon>a").css({"color": "#3775AF"});
         $("span").css({"color": "darkslategrey"});
 
     });
@@ -30,6 +30,7 @@ $(document).ready(function(){
 
     //Object containing image URLs
     const IMAGE_URLS = {
+        home: 'C:/Users/Nardiena A. Pratama/Documents/Personal Projects/new-personal-website/personalwebsite/mysite/static/img/home-bg.jpg',
         mountainAndRiver: 'https://images.pexels.com/photos/206660/pexels-photo-206660.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
         work: 'https://images.pexels.com/photos/796602/pexels-photo-796602.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
         aboutMe: 'https://images.pexels.com/photos/2088170/pexels-photo-2088170.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -51,6 +52,7 @@ $(document).ready(function(){
         appsSection.style.backgroundImage = "url('"+IMAGE_URLS[image]+"')";
     }
 
+    setHomeBackground('home');
     // Check time of the day
     // var now = new Date();
     // if (window.location.pathname == '/home/') {

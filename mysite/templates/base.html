@@ -38,14 +38,14 @@
 
         <nav class="fixed-navbar">
             <div class="nav-wrapper navicon mid navbar-custom">
-                <a href="{% url 'home' %}" class="brand-logo right navicon">~NAP~</a>
+                <a href="#homeSection" class="brand-logo right navicon">~NAP~</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="left hide-on-med-and-down navicon">
                     <li class="navicon">
-                        <a href="{% url 'home' %}">Homepage</a> 
+                        <a href="#homeSection">Homepage</a> 
                     </li>
                     <li class="navicon">
-                        <a href="{% url 'about' %}">More About Me</a>
+                        <a href="#aboutMeSection">About Me</a>
                     </li>
                     <li class="navicon">
                         <a href="{% url 'books' %}">Books</a>
@@ -68,13 +68,13 @@
                     <li>
                         <label>
                             <input id="radiobutton1" name="group1" type="radio" />
-                            <span style="color:#7FAEDA;">Original Theme</span>
+                            <span style="color:#3775AF;">Original Theme</span>
                         </label>
                     </li>
                     <li>
                         <label>
                             <input id="radiobutton2" name="group1" type="radio" />
-                            <span style="color:#7FAEDA;"> Alternative Theme</span>
+                            <span style="color:#3775AF;"> Alternative Theme</span>
                         </label>
                     </li>
                     {% if user.is_authenticated %}

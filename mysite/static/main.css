@@ -13,17 +13,17 @@
     text-align: center;
 }
 
-.homeSection{
-    /* background-attachment: fixed ;
+.home-section{
+    background-attachment: fixed ;
     background-size: cover;
-     */
+    
     position: relative;
     
     background-color: #FAFCFF;
 }
 
 .home-name-div{
-    margin-top: 15%;
+    margin-top: 25vh;
     display: inline-block;
 }
 .home-name-div>p{
@@ -39,15 +39,17 @@
     color: #3775AF;
 }
 
-.aboutMeSection{
+.about-me-section{
     background: white;
-    color: darkslategrey;
     padding-top: 8%;
-    background-size: cover;
 }
 
 .profile-pic-div{
-    padding-top: 2%;
+    padding-top: 5%;
+}
+#profile-pic{
+    height: 15%;
+    width: 15%;
 }
 .hello-about-section-div{
     padding-top: 1.5%;
@@ -67,15 +69,11 @@
     padding-top: 1.5%;
 }
 .appsSection{
-    background: #efefef;
-    color: darkslategrey;
+    background: white;
     padding-top: 8%;
-    background-size: cover;
 }
 
-/* .navbar-custom{
-    
-} */
+
 
 .app-button{
     background-color: #FF3B3F;
@@ -107,7 +105,7 @@
 } */
 
 .navicon>a{
-    color:#7FAEDA;
+    color:#3775AF;
     z-index: 8;
 }
 
@@ -155,4 +153,102 @@
 }
 #search-bar{
     float: left;
+}
+
+@media screen and (min-width: 626px) and (max-width: 1024px) {
+    .home-name-div{
+        margin-top: 40vh;
+        display: inline-block;
+    }
+    .home-name-div>p{
+        font-family: 'Roboto Mono', monospace;
+        font-size: 54pt;
+        color: #727272;
+    }
+    
+    .home-job-title-div>p{ 
+        margin: auto;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 18pt;
+        color: #3775AF;
+    }
+    .about-me-section{
+        background: white;
+        padding-top: 10%;
+    }
+    
+    .profile-pic-div{
+        padding-top: 15%;
+    }
+
+    #profile-pic{
+        height: 25%;
+        width: 25%;
+    }
+    .hello-about-section-div{
+        padding-top: 2%;
+    }
+    
+    .hello-about-section-div>p{
+        font-family: 'Roboto Mono', monospace;
+        font-size: 36pt;
+        color: #7FAEDA;
+    }
+    
+    .description-about-section-div{
+        font-family: 'Roboto Mono', monospace;
+        font-size: 14pt;
+        padding-right: 15%;
+        padding-left: 15%;
+        padding-top: 2%;
+    }
+}
+
+@media screen and (max-width: 625px) {
+    .home-name-div{
+        margin-top: 30vh;
+        display: inline-block;
+    }
+    .home-name-div>p{
+        font-family: 'Roboto Mono', monospace;
+        font-size: 36pt;
+        color: #727272;
+    }
+    
+    .home-job-title-div>p{ 
+        margin: auto;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 18pt;
+        color: #3775AF;
+    }
+    .about-me-section{
+        background: white;
+        padding-top: 15%;
+    }
+    
+    .profile-pic-div{
+        padding-top: 55%;
+    }
+
+    #profile-pic{
+        height: 25%;
+        width: 25%;
+    }
+    .hello-about-section-div{
+        padding-top: 4%;
+    }
+    
+    .hello-about-section-div>p{
+        font-family: 'Roboto Mono', monospace;
+        font-size: 20pt;
+        color: #7FAEDA;
+    }
+    
+    .description-about-section-div{
+        font-family: 'Roboto Mono', monospace;
+        font-size: 12pt;
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-top: 4%;
+    }
 }

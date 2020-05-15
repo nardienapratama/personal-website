@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 
-<section class="sectionTemplate homeSection" id="homeSection">
+<section class="sectionTemplate home-section" id="homeSection">
   <div class="home-name-div"><p>I'm Nardiéna.</p></div>
   <div class="home-job-title-div"><p>A web developer.</p></div>
   <!-- <div class="aboutMeButton">
@@ -8,55 +8,17 @@
   </div> -->
 </section>
 
-<section class="sectionTemplate aboutMeSection" id="aboutMeSection">
+<section class="sectionTemplate about-me-section" id="aboutMeSection">
   <div class="profile-pic-div">
-    <img src="/static/img/nard-profile-pic-circle.png" style="height: 15%; width: 15%;">
+    <img id="profile-pic" src="/static/img/nard-profile-pic-circle.png">
   </div>
   <div class="hello-about-section-div"><p>Hello.</p></div>
   <div class="description-about-section-div"><p>I’m a third-year Computer Science student in the University of Queensland. 
     I am interested in web development and data science.</p></div>
 </section>
 
-<section class="sectionTemplate appsSection" id="appsSection">
-  <div class="row" >
-    <div class="col-sm-6" style="padding-top: 10%;">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="display-4">Book-Search App</h4>
-          <p class="card-text">This is a book-searching app that was created using Google's API. Signing in to the website allows you to see how many books were on your wishlist. </p>
-          <div><a href="{% url 'books' %}" class="btn btn-primary app-button">Check it out!</a></div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6" style="padding-top: 10%;">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="display-4">Special title treatment</h4>
-          <p class="card-text">This is a book-searching app that was created using Google's API. Signing in to the website allows you to see how many books were on your wishlist.</p>
-          <div><a href="#" class="btn btn-primary app-button ">Go somewhere</a></div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="display-4">Special title treatment</h4>
-          <p class="card-text">This is a book-searching app that was created using Google's API. Signing in to the website allows you to see how many books were on your wishlist.</p>
-          <div><a href="#" class="btn btn-primary app-button">Go somewhere</a></div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="display-4">Special title treatment</h4>
-          <p class="card-text">This is a book-searching app that was created using Google's API. Signing in to the website allows you to see how many books were on your wishlist.</p>
-          <div><a href="#" class="btn btn-primary app-button">Go somewhere</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="sectionTemplate what-i-can-do-section" id="appsSection">
+  
 </section>
 
 
