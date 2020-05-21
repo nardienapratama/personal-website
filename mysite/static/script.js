@@ -52,8 +52,9 @@ $(document).ready(function(){
     const setAppsSectionBackground = (image) => {
         appsSection.style.backgroundImage = "url('"+IMAGE_URLS[image]+"')";
     }
-
-    setHomeBackground('home');
+    if (window.location.pathname == '/home/') {
+        setHomeBackground('home');
+    }
     // Check time of the day
     // var now = new Date();
     // if (window.location.pathname == '/home/') {

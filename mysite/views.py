@@ -29,17 +29,44 @@ def books(request):
     # num_fav = request.POST['counter']
     user = request.user
     # user = authenticate(request, num_fav = num_fav)
+    # username = request.POST.get('username')
+    # password = request.POST.get('password')
+    # user = authenticate(request, username=username, password=password)
 
-    if user is not None:
-        user_session = request.session.get('user_session', 'private')
-        request.session['user_session'] = 'private'
+    # if user.is_anonymous:      
+        # del request.session['user_session'] 
+        # return render(request, 'books.html')
+    # if request.user.is_authenticated():
+       
 
+    # else:
+        # if request.session.get('username'):
+        # request.session['username']
+        # print(request.session['username'])
+        # return render(request, 'books.html')
+
+        # if 'username' in request.session:   
+        #     print("this works")
+        #     username = request.session.get('username','private')
+        #     request.session['username'] = 'private'
+        #     print("this works 2")
+        #     return render(request, 'books.html')
+    if user.is_anonymous:
+        # del request.session['username']      
         return render(request, 'books.html')
-
+            
     else:
-        del request.session['user_session']      
+        # num_visits = request.session.get('num_visits', 0)
+        # request.session['num_visits'] = num_visits + 1
+
+        user_session = request.session.get('username', 'private')
+        request.session['username'] = 'private'
+
+        # num_fav = request.POST['counter']
+        # request.session['user_session']['favbooks'] = num_fav
         return render(request, 'books.html')
 
+    
 def signup(request):
     return render(request, 'signup.html')
 
@@ -120,8 +147,10 @@ def loginPage(request):
 
         if user is not None:
             login(request, user)
+            request.session['username'] = username
             if 'next' in request.POST:
-                return HttpResponseRedirect(request.POST.get['next'])
+                # return HttpResponseRedirect(request.POST.get['next'])
+                return redirect('home')
             else:
                 return redirect('home')
             
@@ -134,5 +163,11 @@ def loginPage(request):
     return render(request, 'login.html', response)
 
 def logoutUser(request):
+    if 'action' in request.GET:
+        action = request.GET.get('action')
+        if action == 'logout':
+            if request.session.has_key('username'):
+                request.session.flush()
+    # del request.session['username'] 
     logout(request)
     return redirect('login')
