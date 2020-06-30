@@ -1,13 +1,9 @@
-    # Personal-Website
-    This is a fork of a personal website project I made two years ago on Gitlab. This repository is made for the revamp of the website.
-    The website has links to different apps, as shown below. The website has been developed in Python using the Django framework for the back-end; HTML, CSS, Javascript (with JQuery) for the front-end.
+# Personal-Website
+A personal website created using HTML, CSS, Javascript (Jquery) and Python’s Django framework. This website has been redesigned from the original version made during my third semester at university (2018).
 
+The original website contains several small apps in it, such as a book-searcher using Google’s API, a status-maker, a scheduler (a create-event feature), and includes user authentication. 
+This updated version is a redesigned version of the original website - some of the features may have be removed.
 
-    ## Story 6
-    An app that lets you write a status and post it - it functions much like a to-do list.
-
-    ## Lab 3
-    ...
-
-    ## PPW App
-    Personal website that contains a book-searching feature (using Google's API), a registration feature, a Google login feature, a to-do list feature, etc. 
+Original version: https://ppw-ki-nardienaap.herokuapp.com/ppw_app/
+Original version - status generator: https://ppw-ki-nardienaap.herokuapp.com/Story6/
+Redesigned version: http://nardiena-personal-website.herokuapp.com/
