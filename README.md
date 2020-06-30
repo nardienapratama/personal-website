@@ -5,5 +5,7 @@ The original website contains several small apps in it, such as a book-searcher 
 This updated version is a redesigned version of the original website - some of the features may have be removed.
 
 Original version: https://ppw-ki-nardienaap.herokuapp.com/ppw_app/
+
 Original version - status generator: https://ppw-ki-nardienaap.herokuapp.com/Story6/
+
 Redesigned version: http://nardiena-personal-website.herokuapp.com/
